@@ -12,6 +12,17 @@ buildscript {
 
     }
 }
+plugins {
+    id "org.sonarqube" version "3.0"
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectKey", "vijayvani_-UltimateRecyclerView"
+        property "sonar.organization", "vijayvani-github"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
+}
 
 allprojects {
     repositories {
@@ -39,4 +50,5 @@ ext {
 
     IS_UPLOADING = project.getGradle().startParameter.taskNames.any { it.contains('bintrayUpload') }
 }
+
 
